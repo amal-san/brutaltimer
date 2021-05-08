@@ -1,6 +1,6 @@
 {
   "name": "brutaltimer",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "main": "index.js",
   "repository":"https://github.com/amal-san/brutaltimer.git",
   "author":"amalsan",
@@ -17,5 +17,8 @@
   },
   "bin": {
     "brutaltimer": "index.js"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@amal-san"
   }
 }
