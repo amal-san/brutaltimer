@@ -2,7 +2,7 @@
   "name": "brutaltimer",
   "version": "1.0.0",
   "main": "index.js",
-  "git-repository":"https://github.com/amal-san/brutaltimer.git",
+  "repository":"https://github.com/amal-san/brutaltimer.git",
   "author":"amalsan",
   "description": "A windows command-line application for session management",
   "license": "Apache License 2.0",
