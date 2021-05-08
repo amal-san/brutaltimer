@@ -1,8 +1,8 @@
 {
-  "name": "@amal-san/brutaltimer",
-  "version": "1.0.1",
+  "name": "brutaltimer",
+  "version": "1.0.4",
   "main": "index.js",
-  "repository": "https://github.com/amal-san/brutaltimer.git",
+  "repository": "git://github.com/amal-san/brutaltimer.git",
   "author": "amalsan",
   "description": "A windows command-line application for session management",
   "license": "Apache License 2.0",
@@ -19,6 +19,6 @@
     "brutaltimer": "index.js"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@amal-san"
+    "registry": "https://npm.pkg.github.com"
   }
 }
