@@ -46,7 +46,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@amal-san"
       - run: npm ci
-      - run: echo registry=https://npm.pkg.github.com/amalsan >> .npmrc
+      - run: echo registry=https://npm.pkg.github.com/amal-san >> .npmrc
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_GITHUB_TOKEN}}
