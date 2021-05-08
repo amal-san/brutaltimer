@@ -1,8 +1,11 @@
 {
-  "name": "brutalTimer",
+  "name": "brutatimer",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "git-repository":"https://github.com/amal-san/brutaltimer.git",
+  "author":"amalsan",
+  "description": "A windows command-line application for session management",
+  "license": "Apache License 2.0",
   "dependencies": {
     "chalk": "^4.1.1",
     "clear": "^0.1.0",
@@ -13,6 +16,6 @@
     "start": "node index.js"
   },
   "bin": {
-    "brutalTimer": "index.js"
+    "brutaltimer": "index.js"
   }
 }
