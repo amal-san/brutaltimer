@@ -19,6 +19,7 @@ console.log(
 
 
 const Timer = async (session) => {
+    // intialising seconds
     let seconds;
 
     if(!session){
