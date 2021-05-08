@@ -5,12 +5,14 @@ const chalk = require('chalk')
 const figlet = require('figlet')
 const readline = require("readline-sync");
 const { exec } = require('child_process');
+var process = require('process');
+
 
 
 clear()
 
 console.log(
-  chalk.green.bold(
+  chalk.bold.hex("#f5af19")(
     figlet.textSync('BRUTAL TIMER', {
       horizontalLayout: 'full'
     })
@@ -19,13 +21,19 @@ console.log(
 
 
 const Timer = async (session) => {
-    // intialising seconds
+
     let seconds;
+    var date = new Date();
 
     if(!session){
-        console.log(chalk.green.bold("Enter the time for each session (in minutes)"))
+        console.log(chalk.bold.hex("#78ffd6")("Enter the time for each session (in minutes)"))
         seconds = Number(readline.question());
-        seconds = seconds * 60;
+        if(Number(seconds)){
+            seconds = seconds * 60 ;
+        }
+        else {
+            stopSession("Enter number !!\n");
+        }
     }
     else {
         seconds = session * 60;
@@ -35,20 +43,30 @@ const Timer = async (session) => {
 
     let secondsForTimeout = seconds * 1000;
 
-    console.log(chalk.yellow.bold("Started 🏁"))
-        return new Promise((resolve,reject)=>{
+    console.log(chalk.bold.hex("#78ffd6")("Started 🏁....."))
+    console.log(chalk.hex("#24FE41")(`Start Time: ${date.toString().slice(16,25)}`))
+
+    return new Promise((resolve,reject) => {
             setTimeout(() => {
                 exec('Rundll32.exe user32.dll,LockWorkStation', (err, stdout, stderr) => {
                     if (err) {
                         console.error(err)
-                    } 
+                    }
+                    date = new Date();
+                    console.log(chalk.hex("#24FE41")(`End Time: ${date.toString().slice(16,25)}`))
+                    console.log(chalk.bold.hex("#f7ff00")(`Completed a session 👏`))
+                    console.log(chalk.bold.hex("#78ffd6")("Restart a new session ? [Press y/Y to continue with same minutes] "))
+                    resolve(seconds / 60) 
                 });
-                console.log(chalk.yellow.bold(`Completed a session 👏`))
-                console.log(chalk.yellow.bold("Restart a new session ? [Press y/Y to continue with same minutes] "))
-                resolve(seconds)
+                
             },secondsForTimeout)
         })
     }
+
+const stopSession = (str) => {
+    console.log(chalk.bold.hex("#f7ff00")(str ? str :  "Stopped Session"))
+    process.exit(0);
+}
 
 const main = async (bool) => {
     let sessionTime = await Timer(bool ? bool : false);
@@ -57,8 +75,7 @@ const main = async (bool) => {
         main(sessionTime);
     }
     else {
-        console.log(chalk.red.bold("Stopped Session"))
-        return;
+        stopSession();
     } 
 }
 
