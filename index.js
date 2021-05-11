@@ -38,8 +38,6 @@ const Timer = async (session) => {
     else {
         seconds = session * 60;
     }
-    
-    
 
     let secondsForTimeout = seconds * 1000;
 
@@ -47,6 +45,10 @@ const Timer = async (session) => {
     console.log(chalk.hex("#24FE41")(`Start Time: ${date.toString().slice(16,25)}`))
 
     return new Promise((resolve,reject) => {
+            setTimeout(() => {
+                exec('call windows.bat "brutaltimer" ""')
+
+            },secondsForTimeout - 1000)
             setTimeout(() => {
                 exec('Rundll32.exe user32.dll,LockWorkStation', (err, stdout, stderr) => {
                     if (err) {
@@ -69,6 +71,7 @@ const stopSession = (str) => {
 }
 
 const main = async (bool) => {
+    exec("title brutaltimer")
     let sessionTime = await Timer(bool ? bool : false);
     let restart = readline.keyIn('',{hideEchoBack: true, mask: '',});
     if(restart === 'y'){

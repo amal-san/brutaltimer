@@ -9,16 +9,6 @@
   dependencies:
     "color-convert" "^2.0.1"
 
-"brutaltimer@^1.0.2":
-  "integrity" "sha512-M81lnjUzSYO50cQUWUsvWanLMZYDMsNyf1hohh48cX4WfKH1f+O4Mc29C/MZYV+s6EsJhkCRE1gZpWYTCg4bIA=="
-  "resolved" "https://registry.npmjs.org/brutaltimer/-/brutaltimer-1.0.2.tgz"
-  "version" "1.0.2"
-  dependencies:
-    "chalk" "^4.1.1"
-    "clear" "^0.1.0"
-    "figlet" "^1.5.0"
-    "readline-sync" "^1.4.10"
-
 "chalk@^4.1.1":
   "integrity" "sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg=="
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-4.1.1.tgz"
